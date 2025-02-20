@@ -6,6 +6,7 @@
 }
 body {
   color: #ededed;
+  background: #081b29;
 }
 .header {
   position: fixed;
@@ -13,11 +14,12 @@ body {
   left: 0;
   width: 100%;
   padding: 20px 10%;
-  background: transparent;
+  background: rgba(5, 17, 41, 0.7); /* Đặt độ mờ nền */
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Giúp các phần tử trong header thẳng hàng theo chiều dọc */
-  z-index: 100;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
 }
 .logo {
   position: relative;
@@ -42,12 +44,16 @@ body {
   transition: 0.3s;
   opacity: 0;
   animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
 }
 .navbar a:hover {
   color: #05dbf2;
+  font-size: 25px;
+  text-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 30px #0ef;
 }
 
 .home {
+  position: relative;
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
   align-items: center; /* Căn giữa theo chiều dọc */
@@ -66,19 +72,36 @@ body {
   max-width: 600px;
 }
 
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
 .home-content h3 {
   font-size: 32px;
   font-weight: 700;
   margin: -3px 0;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
 }
 .home-content h3:nth-of-type(2) {
   margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
 }
 .home-content h3 span {
   color: #0ef;
 }
 .home-content p {
   font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .home-sci {
@@ -99,9 +122,12 @@ body {
   border-radius: 50%;
   color: #0ef;
   text-decoration: none;
+  transition: 0.5s ease;
   font-size: 24px;
-  transition: 0.3s;
   margin-bottom: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
 }
 .home-sci a:hover {
   background: #0ef;
@@ -119,10 +145,109 @@ body {
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
+  box-shadow: 0 0 5pc #0ef;
+  animation: slideTop 1s ease forwards;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
 }
 .btn-box:hover {
   box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,
     0 0 200px cyan;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; /* Giới hạn kích thước tối đa */
+}
+
+.about-img img {
+  margin: 25%;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .about-img {
+    max-width: 300px; /* Giảm kích thước */
+  }
+}
+
+/* Khi màn hình nhỏ hơn 480px (điện thoại) */
+@media screen and (max-width: 480px) {
+  .about-img {
+    max-width: 200px; /* Giảm kích thước hơn nữa */
+  }
+}
+
+.about-text h2 {
+  font-size: 60px;
+}
+
+.about-text h2 span {
+  color: #0ef;
+}
+
+.about-text h4 {
+  font-size: 29px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.7;
+  margin: 15px 0 30px;
+}
+.about-text p {
+  color: aliceblue;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+}
+
+.logo-me {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.logo-me img {
+  width: 400px;
+  height: 400px;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .logo-me img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Nếu logo che mất nội dung thì ẩn */
+@media (max-width: 1050px) {
+  .logo-me {
+    display: none;
+  }
 }
 
 @keyframes slideRight {
@@ -138,6 +263,28 @@ body {
 }
 
 @keyframes slideTop {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
   0% {
     transform: translateX(100px);
     opacity: 0;
