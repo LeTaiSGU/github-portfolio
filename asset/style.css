@@ -159,6 +159,11 @@ body {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1.5rem;
+  min-height: 100vh; /* Thêm chiều cao tối thiểu để kéo dài */
+  padding: 40px 10%; /* Đồng bộ padding với section khác */
+}
+.about-text {
+  padding: 20px 0; /* Thêm padding để tăng chiều cao */
 }
 
 .about-img {
@@ -195,7 +200,8 @@ body {
 }
 
 .about-text h2 {
-  font-size: 60px;
+  font-size: 50px; /* Giảm nhẹ từ 60px để cân đối */
+  margin-bottom: 10px;
 }
 
 .about-text h2 span {
@@ -203,17 +209,17 @@ body {
 }
 
 .about-text h4 {
-  font-size: 29px;
+  font-size: 25px; /* Giảm từ 29px */
   font-weight: 600;
   color: #fff;
-  line-height: 1.7;
-  margin: 15px 0 30px;
+  line-height: 1.5; /* Giảm từ 1.7 */
+  margin: 10px 0 20px; /* Giảm margin */
 }
 .about-text p {
   color: aliceblue;
-  font-size: 20px;
+  font-size: 18px; /* Giảm từ 20px */
   line-height: 1.4;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem; /* Giảm từ 4rem */
 }
 
 .logo-me {
@@ -245,89 +251,123 @@ body {
 section {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  padding: 40px 10%; /* Đồng bộ padding, giảm từ 70px xuống 40px */
+  box-sizing: border-box;
 }
 
 .container-skill {
-  width: 600px;
-  height: 500px;
-  padding: 75px 90px;
-  margin-left: 120px;
+  width: 100%;
+  max-width: 600px;
+  height: auto; /* Để chiều cao tự điều chỉnh */
+  padding: 30px 20px; /* Giảm từ 75px 90px */
+  margin: 0 auto; /* Căn giữa thay vì margin-left */
 }
-
 .heading1 {
   text-align: center;
   text-decoration: underline;
-  text-underline-offset: 10px;
-  text-decoration-thickness: 5px;
-  margin-bottom: 50px;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+  margin-bottom: 20px; /* Giảm từ 50px */
+  font-size: 28px; /* Thêm kích thước chữ để rõ ràng */
 }
-
-.bar {
+.bar{
   font-size: 23px;
 }
+
 .technical-bars .bar {
-  margin-top: 40px 0;
+  margin: 15px 0; /* Giảm từ 40px */
 }
-.technical-bars .bar:first-child {
+.technical-bars .bar:first-child{
   margin-top: 0;
 }
-
 .technical-bars .bar:last-child {
   margin-bottom: 0;
 }
-
-.technical-bars .bar .info {
+.technical-bars .bar .info{
   margin-bottom: 5px;
 }
-
-.technical-bars .bar .info span {
-  color: white;
+.technical-bars .bar .info span{
   font-size: 17px;
-  animation: showText 0.5s linear forwards;
-  opacity: 0;
   font-weight: 500;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
 }
-
 .technical-bars .bar .progress-line {
   position: relative;
-  height: 5px;
+  border-radius: 10px;
   width: 100%;
-  background: #000;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  overflow: hidden;
+  height: 5px;
+  background-color: #000;
+  margin-bottom: 15px;
 }
 
 .technical-bars .bar .progress-line span {
-  position: absolute;
   height: 100%;
-  width: 0; /* Bắt đầu từ 0 để animation có hiệu ứng */
-  background: #0ef;
+  background-color: #0ef;
+  position: absolute;
   border-radius: 10px;
-  transition: width 1s ease-in-out; /* Chỉnh sửa hiệu ứng */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s ease-in-out forwards;
+
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .progress-line.html span {
   width: 90%;
 }
-
-.progress-line span::after {
+.progress-line.javascript span {
+  width: 60%;
+}
+.progress-line.java span {
+  width: 90%;
+}
+.progress-line.react span {
+  width: 50%;
+}
+.progress-line.tailwind span {
+  width: 50%;
+}
+.progress-line.python span {
+  width: 60%;
+}
+.progress-line span::after{
   position: absolute;
-  padding: 1px 8px;
+  padding: 1px 0px;
   background-color: #000;
   color: #fff;
   font-size: 12px;
   border-radius: 3px;
-  top: -28px;
+  top:-28px;
   right: -20px;
   animation: showText 0.5s 1.5s linear forwards;
   opacity: 0;
 }
-.progress-line.html span::after {
+.progress-line.html span::after{
   content: "90%";
 }
-
-.progress-line span::before {
+.progress-line.javascript span::after{
+  content: "90%";
+}
+.progress-line.jav span::after{
+  content: "90%";
+}
+.progress-line.react span::after{
+  content: "90%";
+}
+.progress-line.tailwind span::after{
+  content: "90%";
+}
+.progress-line.python span::after{
+  content: "90%";
+}
+.progress-line span::before{
   content: "";
   position: absolute;
   width: 0;
@@ -336,10 +376,10 @@ section {
   border-bottom-width: 0px;
   border-right-width: 0px;
   border-top-color: #000;
-  top: -10px;
+  top:-10px;
   right: 0;
   animation: showText 0.5s 1.5s linear forwards;
-  opacity: 0;
+  opacity:0 ;
 }
 
 @keyframes showText {
@@ -347,35 +387,132 @@ section {
     opacity: 1;
   }
 }
-
 .radial-bars {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
+  padding: 10px 0;
 }
 
 .radial-bars .radial-bar {
   width: 50%;
-  height: 170px;
-  margin-bottom: 10px;
+  height: 140px; 
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.radial-bars .radial-bar svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 120px;
+  height: 160px;
+}
+
+.radial-bars .radial-bar .progress-bar {
+  stroke-width: 10;
+  stroke: black; /* Sửa từ stop-color thành stroke */
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+  animation: animate-bar 1s linear forwards;
+}
+
+@keyframes animate-bar {
+  100% {
+    stroke-dashoffset: 0; /* Sửa từ -1 thành 0 để hiển thị toàn bộ vòng nền */
+  }
+}
+
+.path {
+  stroke-width: 10;
+  stroke: #0ef;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+}
+
+.path-1 {
+  animation: animate-path1 1s 1s linear forwards;
+}
+.path-2 {
+  animation: animate-path2 1s 1s linear forwards;
+}
+.path-3 {
+  animation: animate-path3 1s 1s linear forwards;
+}
+.path-4 {
+  animation: animate-path4 1s 1s linear forwards;
+}
+
+@keyframes animate-path1 {
+  100% {
+    stroke-dashoffset: 50.2; 
+  }
+}
+
+@keyframes animate-path2 {
+  100% {
+    stroke-dashoffset: 100.4; 
+  }
+}
+
+@keyframes animate-path3 {
+  100% {
+    stroke-dashoffset: 150.6; 
+  }
+}
+@keyframes animate-path4 {
+  100% {
+    stroke-dashoffset: 150.6; 
+  }
+}
+
+.radial-bar .percentage{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size:17px;
+  font-weight: 500;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+.radial-bar .text{
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
 }
 
 /* Projects CSS */
 #projects {
   color: aliceblue;
-  font-size: 20px;
+  font-size: 18px; /* Giảm từ 20px */
   line-height: 1.4;
-  margin-bottom: 4rem;
   background: #081b29;
-  width: 100%; /* Ensure the section takes full width */
+  min-height: 70vh;
+  width: 100%;
+  padding: 40px 10%; /* Đồng bộ padding */
+  box-sizing: border-box;
+  margin-bottom: 0; /* Loại bỏ margin-bottom thừa */
 }
-
 #sub-title {
   text-align: center;
-  font-size: 60px;
-  padding-bottom: 70px;
+  font-size: 50px; /* Giảm từ 60px */
+  padding-bottom: 30px; /* Giảm từ 70px */
+  margin: 0; /* Đảm bảo không có margin thừa */
 }
 
 #sub-title span {
@@ -383,9 +520,9 @@ section {
 }
 
 .container {
-  padding: 90px;
-  max-width: 100%; /* Allow the container to expand fully */
-  margin: 0 auto; /* Center the container */
+  padding: 0; /* Loại bỏ padding 90px */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-list {
@@ -401,7 +538,7 @@ section {
 
 .project-list div {
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
-  padding: 40px;
+  padding: 20px;
   font-size: 14px; /* Slightly larger font size for readability */
   border-radius: 20px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
