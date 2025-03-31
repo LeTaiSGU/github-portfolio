@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
         <nav class="navbar">
-            <a href="#" style="--i:1" class="actice">Home</a>
-            <a href="#" style="--i:2" class="actice">About</a>
+            <a href="#" style="--i:1" class="actice" id="home-link">Home</a>
+            <a href="#" style="--i:2" class="actice" id="about-link">About</a>
             <a href="#" style="--i:3" class="actice">Skill</a>
             <a href="#" style="--i:4" class="actice">Project</a>
             <a href="#" style="--i:5" class="actice">Contact</a>
@@ -27,17 +29,19 @@
             <h3>Hello, It's Me</h3>
             <h1>Lê Tấn Tài</h1>
             <h3>And I'm a <span class="text"></span></h3>
-            <p>I'm a Backend Developber, mainly working with Java, .NET, and having knowledge of React 
+            <p>I'm a Backend Developber, mainly working with Java, .NET, and having knowledge of React
                 <br>I enjoy building high-performance systems and constantly learning to improve my programming skills.
             </p>
             <div class="home-sci">
-                <a href="https://www.facebook.com/itletantaik21.sgu/" style="--i:6" class="actice"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://github.com/LeTaiSGU" style="--i:7" class="actice"><i class='bx bxl-github' ></i></a>
-                <a href="https://www.linkedin.com/in/t%E1%BA%A5n-t%C3%A0i-l%C3%AA-155478347/" style="--i:8" class="actice"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://www.facebook.com/itletantaik21.sgu/" style="--i:6" class="actice"><i
+                        class='bx bxl-facebook-circle'></i></a>
+                <a href="https://github.com/LeTaiSGU" style="--i:7" class="actice"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/t%E1%BA%A5n-t%C3%A0i-l%C3%AA-155478347/" style="--i:8"
+                    class="actice"><i class='bx bxl-linkedin'></i></a>
             </div>
             <a href="" class="btn-box">More About Me</a>
         </div>
-       
+
     </section>
     <section class="about" id="about">
         <div class="about-img">
@@ -45,15 +49,56 @@
         </div>
         <div class="about-text">
             <h2>About <span>Me</span></h2>
-            <h4>Backend Developer 
+            <h4>Backend Developer
             </h4>
-            <p>Tôi là sinh viên năm 4 của Trường Đại học Sài Gòn, chuyên ngành Công nghệ thông tin, là một kỹ sư phần mềm, với kiến thức nền tảng vững chắc cùng với tinh thần học hỏi
-                cao. Tôi mang đến các giải pháp giải quyết vấn đề một cách hiệu quả về phần Backend cũng như một chút về Frontend. Tôi có chuyên môn là Java, .Net Framework.
-                Tôi luôn sẵn sàng học hỏi công nghệ mới.</p>
+            <p>Tôi là sinh viên năm 4 của Trường Đại học Sài Gòn, chuyên ngành Công nghệ thông tin, là một kỹ sư phần
+                mềm, với kiến thức nền tảng vững chắc cùng với tinh thần học hỏi
+                cao. Tôi mang đến các giải pháp giải quyết vấn đề một cách hiệu quả về phần Backend cũng như một chút về
+                Frontend. Tôi có chuyên môn là Java, Python.
+                Tôi luôn sẵn sàng học hỏi thêm công nghệ mới cũng như các kĩ năng cần thiết.</p>
             <a href="" class="btn-box">More About Me</a>
         </div>
-       
+
     </section>
+    <section>
+        <div class="projects" id="projects">
+            <div class="container">
+                <h1 id="sub-title">My <span>Project</span></h1>
+                <div class="project-list">
+                    <div>
+                        <i class='bx bx-clinic' style='color:#00eeff'></i>
+                        <h2>Clinic web</h2>
+                        <p>The website facilitates easy management of clinic information. The project's goal is to build
+                            an efficient and fast appointment scheduling management system that optimizes the clinic's
+                            scheduling process, enhances customer experience, and improves the clinic's operational
+                            efficiency.</p>
+                        <a href="https://github.com/TruongDHiep/Clinic.git" class="read">Link project</a>
+                    </div>
+                    <div>
+                        <i class='bx bx-clinic' style='color:#00eeff'></i>
+                        <h2>Clinic web</h2>
+                        <p>The website facilitates easy management of clinic information. The project's goal is to build
+                            an efficient and fast appointment scheduling management system that optimizes the clinic's
+                            scheduling process, enhances customer experience, and improves the clinic's operational
+                            efficiency.</p>
+                        <a href="#" class="read">Link project</a>
+                    </div>
+                    <div>
+                        <i class='bx bx-clinic' style='color:#00eeff'></i>
+                        <h2>Clinic web</h2>
+                        <p>The website facilitates easy management of clinic information. The project's goal is to build
+                            an efficient and fast appointment scheduling management system that optimizes the clinic's
+                            scheduling process, enhances customer experience, and improves the clinic's operational
+                            efficiency.</p>
+                        <a href="#" class="read">Link project</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 <script src="asset/main.js"></script>
+
 </html>

@@ -8,3 +8,21 @@ var typed = new Typed(".text", {
     showCursor: true,   // Hiển thị con trỏ nhấp nháy
     cursorChar: "|",    // Ký tự con trỏ
 });
+
+document.addEventListener("DOMContentLoaded",function(){
+    const homeLink = document.getElementById("home-link");
+    const aboutlink = document.getElementById("about-link");
+
+    const aboutSection = document.getElementById("about");
+
+    aboutlink.addEventListener("click",function (event){
+        event.preventDefault();
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+    })
+
+    homeLink.addEventListener("click", function (event) {
+        event.preventDefault(); 
+        window.scrollTo({ top: 0, behavior: "smooth" }); 
+    });
+});
+

@@ -235,6 +235,113 @@ body {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
+/* Projects CSS */
+#projects {
+  color: aliceblue;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+  background: #081b29;
+  width: 100%; /* Ensure the section takes full width */
+}
+
+#sub-title {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 70px;
+}
+
+#sub-title span {
+  color: #0ef; /* Cyan color for the span */
+}
+
+.container {
+  padding: 90px;
+  max-width: 100%; /* Allow the container to expand fully */
+  margin: 0 auto; /* Center the container */
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(300px, 1fr)
+  ); /* 3 columns max, each at least 300px */
+  grid-gap: 40px;
+  margin-top: 50px;
+  justify-content: center; /* Center the grid items */
+}
+
+.project-list div {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  padding: 40px;
+  font-size: 14px; /* Slightly larger font size for readability */
+  border-radius: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.2); /* Initial neon glow */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  border: 1px solid rgba(0, 238, 255, 0.3); /* Subtle cyan border */
+}
+
+.project-list div i {
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #00eeff; /* Cyan color for icons */
+}
+
+.project-list div h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #ffffff; /* White color for headings */
+}
+
+.project-list div p {
+  color: #b0b0b0; /* Light gray for paragraph text */
+  line-height: 1.6;
+}
+
+.project-list div a {
+  text-decoration: none;
+  color: #081b29; /* Dark color for button text */
+  font-size: 14px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.read {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef; /* Cyan background for the button */
+  border-radius: 40px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  box-shadow: 0 0 10px #0ef, 0 0 20px #0ef; /* Initial glow for the button */
+  transition: box-shadow 0.3s ease;
+}
+
+.read:hover {
+  box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan; /* Enhanced glow on hover */
+}
+
+.project-list div:hover {
+  transform: translateY(-20px); /* Lift effect on hover */
+  box-shadow: 0 0 30px rgba(0, 238, 255, 0.5); /* Stronger glow on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Stack cards on smaller screens */
+  }
+}
 /* Responsive */
 @media (max-width: 1200px) {
   .logo-me img {
